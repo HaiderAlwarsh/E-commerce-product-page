@@ -11,23 +11,19 @@
 body{
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 16px;
-    background-color: aqua;
-
 }
 
 .main-div{
     width: 100%;
     height: 100vh;
-    /* background-color: aquamarine; */
 }
 
-
+/* __________________ Header ________________ */
 .main-header{
     background-color: hsl(0, 0%, 100%);
     display: flex;
     height: 8vh;
 }
-
 
 nav{
     display: flex;
@@ -43,7 +39,6 @@ nav{
     display: flex;
     align-items: center;
     width: 50%;
-    justify-content: space-around;
     margin-left: 1rem
 }
 
@@ -52,6 +47,11 @@ nav{
     align-items: center;
     width: 50%;
     justify-content: flex-end;
+}
+
+.logo{
+    margin-left: 1rem;
+    line-height: 2rem;
 }
 
 .cart{
@@ -69,16 +69,12 @@ nav{
 .menu{ 
     position: absolute;
     width: 0%;
-    background-color: #eee;
+    background-color: hsl(0, 0%, 100%);
     height: 100vh;
     top: 0;
     z-index: 1000;
     left: -254px;
 }
-
-/* .menu.hidden{
-    left: -254px;
-} */
 
 .menu ul{
     display: flex;
@@ -93,7 +89,6 @@ nav{
     font-weight: bolder;
 }
 
-
 .burger-close-icon{
     z-index: 9999;
 }
@@ -106,3 +101,48 @@ nav{
     position: absolute;
     top: 0;
 }
+
+/* __________________ End of header ________________ */
+
+
+/* __________________ First section ________________ */
+.main-section{
+    width: 100%;
+    height: 92vh;
+}
+
+.main-section-productImages{
+    width: 100%;
+    height: 40%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(/imgs/image-product-1.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+
+.prev-arrow{
+    content: '';
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 8rem;
+    left: 1rem;
+    background: url(/icons/icon-previous.svg) center center no-repeat;
+    background-color: aliceblue;
+    border-radius: 2rem;
+}
+
+.next-arrow{
+    content: '';
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 8rem;
+    right: 1rem;
+    background: url(/icons/icon-next.svg) center center no-repeat;
+    background-color: aliceblue;
+    border-radius: 2rem;
+}
+
