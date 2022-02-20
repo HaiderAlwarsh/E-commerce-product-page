@@ -11,6 +11,7 @@
 body{
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 16px;
+    background-color: hsl(0, 0%, 100%);
 }
 
 .main-div{
@@ -105,7 +106,7 @@ nav{
 /* __________________ End of header ________________ */
 
 
-/* __________________ First section ________________ */
+/* __________________ Start section image ________________ */
 .main-section{
     width: 100%;
     height: 92vh;
@@ -123,7 +124,6 @@ nav{
 
 
 .prev-arrow{
-    content: '';
     width: 2.5rem;
     height: 2.5rem;
     position: absolute;
@@ -135,7 +135,6 @@ nav{
 }
 
 .next-arrow{
-    content: '';
     width: 2.5rem;
     height: 2.5rem;
     position: absolute;
@@ -146,3 +145,148 @@ nav{
     border-radius: 2rem;
 }
 
+/* __________________ End image section ________________ */
+
+/* __________________ Start product section  ________________ */
+
+.main-section-productDetails{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-detail{
+    margin: 1.2rem;
+}
+
+.product-detail span{
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: bolder;
+    color: hsl(29, 100%, 55%);
+    text-shadow: 0.5px 0 currentColor;
+    letter-spacing: 2px;
+}
+
+.product-detail h1{
+    margin: 0.6rem 0 1rem 0;
+    font-weight: 900;
+    font-size: 2rem;
+    color: hsl(0, 0%, 0%);
+    text-shadow: 0.5px 0 currentColor;
+    letter-spacing: 0.5px;
+}
+
+.product-detail p{
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.product-price{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+}
+
+.cost{
+    margin-left: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.total-price{
+    font-weight: 900;
+    font-size: 1.7rem;
+    color: hsl(0, 0%, 0%);
+    text-shadow: 0.9px 0 currentColor;
+    letter-spacing: 0.5px;
+}
+
+.per-cent{
+    background-color: hsl(25, 100%, 94%);
+    color: hsl(29, 100%, 55%);
+    font-weight: 900;
+    font-size: .9rem;
+    text-shadow: 0.5px 0 currentColor;
+    letter-spacing: 0.5px;
+    padding: 0.2rem 0.7rem;
+    border-radius: 0.3rem;
+    margin-left: 1rem;
+}
+
+
+.discount{
+    margin-right: 1.2rem;
+}
+
+.discount span {
+    font-size: 1rem;
+    color: hsl(220, 14%, 75%);
+    text-shadow: 0.9px 0 currentColor;
+    letter-spacing: 0.5px;
+    text-decoration: line-through;
+}
+
+.product-countAndBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.product-count{
+    position: relative;
+    background-color: rgb(182, 188, 200, 0.1);
+    padding: 1rem 11rem;
+    margin: 1rem;
+    border-radius: 0.6rem;
+}
+
+.counter{
+    font-weight: 900;
+    font-size: 1rem;
+    color: hsl(0, 0%, 0%);
+    text-shadow: 0.5px 0 currentColor;
+}
+
+.minus{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: url(/icons/icon-minus.svg) center center no-repeat;
+}
+
+.plus{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    background: url(/icons/icon-plus.svg) center center no-repeat;
+}
+
+.btn-add{
+    background-color: hsl(29, 100%, 55%);
+    color: hsl(0, 0%, 100%);
+    font-size: .9rem;
+    text-shadow: 0.5px 0 currentColor;
+    letter-spacing: 0.5px;
+    padding: 1rem 9rem;
+    border-radius: 0.6rem;
+    border: none;
+    position: relative;
+}
+
+.btn-add::before{
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0.7rem;
+    left: 6.9rem;
+    background: url(/icons/icon-cart.svg) center center no-repeat;
+}

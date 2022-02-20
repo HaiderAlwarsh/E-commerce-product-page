@@ -7,8 +7,6 @@ $(document).ready(function(){
 
         let target = e.target.parentElement;
 
-        console.log(target);
-
         if($(target) && $(target).hasClass('burger-close-icon')){
             slideMenu();
         
@@ -16,8 +14,6 @@ $(document).ready(function(){
             imageSlider(e.target);
         }
     })
-
-
 
  //Display sideBar
 function slideMenu(){
@@ -47,7 +43,6 @@ function slideMenu(){
     }
 }
 
-
 // Change product image
 function imageSlider(target){
 
@@ -72,6 +67,5 @@ function imageSlider(target){
         $('.main-section-productImages').css('background-image', 'url(' +imageUrl[counter]+ ')');                
     }
 }
-
 
 })
