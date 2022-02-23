@@ -11,7 +11,7 @@ $(document).ready(function(){
         if($(target) && $(target).hasClass('burger-close-icon')){
 
             preventMultiClick('.burger-close-icon')
-            slideMenu();
+            slideBar();
         
         }else if($(target) && $(target).hasClass('main-section-productImages')){
 
@@ -38,11 +38,19 @@ $(document).ready(function(){
             setTimeout(function(){
                 DisplayCart();
             }, 200)
+        
+        }else if($(target) && $(target).hasClass('delete')){
+            if(confirm('Are you sure to delete all product?')){
+                deleteProducts();
+            }
+        
+        }else if($(e.target) && $(e.target).hasClass('background')){// Close the slide bar if click on th body
+            slideBar();
         }
     })
 
  //Display sideBar
-function slideMenu(){
+function slideBar(){
 
     if($('.menu').css('left') !== '-254px'){
 
@@ -104,7 +112,6 @@ function preventMultiClick(elmName){
         }, 400)
 }
 
-
 function CountQuantity(ele){
     if($(ele).hasClass('minus')){
         numOfProd --;
@@ -121,25 +128,67 @@ function CountQuantity(ele){
     }
 }
 
-
 //Display product in the cart and all details
 function DisplayCart(){
 
-    let cartList = '<div class="cart-list"><header><h3>Cart</h3></header><section class="cart-list-body"><p>Your cart is empty</p></section></div>';
+    let cartList = `
+    <div class="cart-list">
+        <header>
+            <h3>Cart</h3>
+        </header>
+        <section class="cart-list-body">
+            <p>Your cart is empty</p>
+        </section>
+    </div>`;
+
+    $(cartList).slideDown();
 
     if($('body').find('.cart-list').length != 1){
-        $('.main-div').after(cartList)
-        
+        $('.main-div').after(cartList);
+
+        if($('.cart').hasClass('active')){
+            addProduct()
+        }
+
     }else {
-        $('body .cart-list').remove()
+        $('body .cart-list').remove();
     }
-
 }
 
-
+//Add product to the cart
 function addProduct(){
-    let addProduct = '';
+    let amount = parseInt($('.amount').text());
+    let totalPrice = $('.total-price').text().slice(1);
+    let totalCost = amount * totalPrice;
+
+    let addProduct = `
+    <div class="product-container">
+        <div class="product-img">
+            <img src="imgs/image-product-1-thumbnail.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <div class="product-name">Fall Limited Edition Sneakers</div>
+            <div class="price-details">
+                <span class="price-of-product">${totalPrice} x</span>
+                <span class="CountQuantity">${amount}</span>
+                <span class="total-cost">$${totalCost}</span>
+            </div>
+        </div>
+        <div class="delete">
+            <p class="delete-icon"></p>
+        </div>
+    </div>
+        <div class="checkout">
+            <button class="chekBtn">Checkout</button>
+        </div>`;
+
+    $('.cart-list-body').html(addProduct);
 }
 
+//Delete product from cart
+function deleteProducts(){
+    $('.cart').removeClass('active');
+    $('.cart-list-body').html('<p>Your cart is empty</p>');
 
+}
 })

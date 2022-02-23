@@ -341,7 +341,7 @@ nav{
     flex-direction: column;
 }
 
-.cart-list-body p{
+.cart-list-body > p{
     font-size: 1rem;
     color: hsl(220, 14%, 40%);
     text-shadow: 0.9px 0 currentColor;
@@ -350,6 +350,9 @@ nav{
 
 .product-container{
     display: flex;
+    width: 100%;
+    align-items: center;
+    margin-left: 3rem;
 }
 
 .product-img img{
@@ -358,8 +361,54 @@ nav{
     border-radius: 0.3rem;
 }
 
+.chekBtn{
+    background-color: hsl(29, 100%, 55%);
+    color: hsl(0, 0%, 100%);
+    font-size: 1rem;
+    text-shadow: 0.5px 0 currentColor;
+    letter-spacing: 0.5px;
+    padding: 1rem 8rem;
+    border-radius: 0.6rem;
+    border: none;
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.delete-icon{
+    width: 0.7rem;
+    height: 1rem;
+    background: url(/icons/icon-delete.svg) center center no-repeat;
+}
+
+.product-name{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 10rem;
+    color: rgb(0, 0, 0, 0.3);
+    text-shadow: 0.5px 0 currentColor;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.product-details{
+    margin: 0 5rem 0 1rem;
+}
+
+.CountQuantity, .price-of-product{
+    color: rgb(0, 0, 0, 0.3);
+    text-shadow: 0.5px 0 currentColor;
+    letter-spacing: 0.5px;
+}
 
 
+.total-cost{
+    font-weight: 400;
+    font-size: 1rem;
+    color: hsl(0, 0%, 0%);
+    text-shadow: 0.9px 0 currentColor;
+    letter-spacing: 0.5px;
+}
 
 
 /* __________________ End cart list  ________________ */
