@@ -46,6 +46,9 @@ $(document).ready(function(){
         
         }else if($(e.target) && $(e.target).hasClass('background')){// Close the slide bar if click on th body
             slideBar();
+        
+        }else if($(e.target) && $(e.target).hasClass('smell-image')){
+            changeImage(e.target)
         }
     })
 
@@ -191,4 +194,14 @@ function deleteProducts(){
     $('.cart-list-body').html('<p>Your cart is empty</p>');
 
 }
+
+//Change image 
+function changeImage(imgSrc){
+
+    let src = $(imgSrc).children().attr('src').slice(0, 20) + '.jpg';
+    $('.main-section-productImages').css('background-image', 'url(' +src+ ')');
+    
+}
+
+
 })
