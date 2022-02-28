@@ -283,6 +283,10 @@ nav{
     background: url(/icons/icon-plus.svg) center center no-repeat;
 }
 
+.btn-count-container{
+    text-align: center;
+}
+
 .btn-add{
     background-color: hsl(29, 100%, 55%);
     color: hsl(0, 0%, 100%);

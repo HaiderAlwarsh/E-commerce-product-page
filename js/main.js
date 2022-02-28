@@ -3,6 +3,13 @@ $(document).ready(function(){
     let imageUrl = ['/imgs/image-product-1.jpg', '/imgs/image-product-2.jpg', '/imgs/image-product-3.jpg', '/imgs/image-product-4.jpg'];
     let counter = 0;
     let numOfProd = 0
+
+    if($(document).outerWidth() >= '768'){
+        insertSmallImage();
+    }else if($(document).outerWidth < '768'){
+        deleteSmallImage();
+    }
+
     
     $(document).on('click', function(e){
 
@@ -51,6 +58,7 @@ $(document).ready(function(){
             changeImage(e.target)
         }
     })
+
 
  //Display sideBar
 function slideBar(){
@@ -203,5 +211,34 @@ function changeImage(imgSrc){
     
 }
 
+//Show small image when the window size more than or equal 768
+function insertSmallImage (){
+    let smallImage = `
+    <div class="smell-image-container">
+        <div class="smell-image">
+            <img src="imgs/image-product-1-thumbnail.jpg" alt="">
+        </div>
+        <div class="smell-image">
+            <img src="imgs/image-product-2-thumbnail.jpg" alt="">
+        </div>
+        <div class="smell-image">
+            <img src="imgs/image-product-3-thumbnail.jpg" alt="">
+        </div>
+        <div class="smell-image">
+            <img src="imgs/image-product-4-thumbnail.jpg" alt="">
+        </div>
+    </div>`
 
+    $('.main-section-productImages').prepend(smallImage)
+
+}
+
+//Remove small image when the window size less than 768
+function deleteSmallImage(){
+    let mainSection = $('.main-section-productImages').children('.smell-image-container');
+    
+    if(mainSection){
+        $('.smell-image-container').remove();
+    }
+}
 })
