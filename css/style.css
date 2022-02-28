@@ -421,11 +421,18 @@ nav{
 @media (min-width: 320px){
 
     .main-div{
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .product-price {
         width: 21rem;
+    }
+
+    .btn-count-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .product-count{
@@ -437,10 +444,15 @@ nav{
     .btn-add{
         padding: 1rem 6rem;
         width: 100%;
+        margin-bottom: 1rem;
     }
 
     .btn-add::before {
-        left: 4.9rem;
+        left: 3.9rem;
+    }
+
+    .delete{
+        margin-right: .5rem;
     }
 }
 
@@ -629,6 +641,15 @@ nav{
         border-bottom: 3px solid hsl(29, 100%, 55%);
         line-height: 8.5vh;
     }
+
+    .btn-count-container {
+        flex-direction: row;
+    }
+
+    .btn-add{
+        margin-bottom: unset;
+    }
+
     
     /* __________________ End section image ________________ */
 
