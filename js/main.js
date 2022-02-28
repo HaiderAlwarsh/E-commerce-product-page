@@ -10,7 +10,6 @@ $(document).ready(function(){
         deleteSmallImage();
     }
 
-    
     $(document).on('click', function(e){
 
         let target = e.target.parentElement;

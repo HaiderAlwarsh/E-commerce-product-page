@@ -418,6 +418,33 @@ nav{
 /* __________________ End cart list  ________________ */
 
 
+@media (min-width: 320px){
+
+    .main-div{
+        overflow: hidden;
+    }
+
+    .product-price {
+        width: 21rem;
+    }
+
+    .product-count{
+        padding: 1rem 9rem;
+        margin: 1rem 0;
+        width: 80%;
+    }
+
+    .btn-add{
+        padding: 1rem 6rem;
+        width: 100%;
+    }
+
+    .btn-add::before {
+        left: 4.9rem;
+    }
+}
+
+
 @media (min-width: 768px) {
 
     /* __________________ Start the header ________________ */
@@ -544,10 +571,12 @@ nav{
 
     .product-count{
         padding: 1rem 4rem;
+        width: 40%;
     }
 
     .btn-add{
         padding: 1rem 3.5rem;
+        margin-left: 0.8rem;
     }
 
     .btn-add::before{
